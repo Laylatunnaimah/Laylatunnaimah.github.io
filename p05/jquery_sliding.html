@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQUERY Sliding - laylatunna`imah</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,300&display=swap');
+
+      body {
+        font-family: "Poppins";
+      }
+
+      .bungkus{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .tombol-slide {
+        width: 40%;
+        height: 40px;
+        border: none;
+        background-color: pink;
+        font-weight: bold;
+        transition: all;
+        transition-duration: 500ms;
+      }
+
+      .belum-terbuka {
+        border-radius: 10px;
+      }
+
+      .terbuka {
+        border-radius: 10px 10px 0 0 ;
+      }
+
+      .sliding {
+        width: 40%;
+        height: 100px;
+        display: none;
+        text-align: center;
+        background-color: pink;
+        border-radius: 0 0 10px 10px;
+      }
+
+      .sliding h4 {
+        margin-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <body>
+      <div class="bungkus">
+        <button id="tombol" class="tombol-slide belum-terbuka" >Jquery sliding efek</button>
+        <div class="sliding">
+          <h4>
+            Challenge pertemuan 5, Laylatunna`imah - jquery sliding
+          </h4> 
+        </div>
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="script.js"></script>
+      <script>
+        $(document).ready(function () {
+          $("#tombol").click(function () {
+            $("#tombol").toggleClass("belum-terbuka")
+            $("#tombol").toggleClass("terbuka")
+            $(".sliding").slideToggle("slow");
+          });
+        });
+      </script>
+    </body>
+  </body>
+</html>
