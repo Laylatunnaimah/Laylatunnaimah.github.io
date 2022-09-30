@@ -7,14 +7,17 @@
   <title>Laylatunnaimah</title>
   <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
   <style>
-    div{
+    *{
+       font-family: "Poppins";
+    }
+    .pembungkus{
       display: flex;
       align-items: center;
       flex-direction: column;
       text-align: center;
       justify-content: space-evenly;
     }
-    img{
+    .profile{
       width: 200px;
       height: 200px;
       border-radius: 50%;
@@ -25,19 +28,138 @@
       font-family: "Poppins";
       font-size: 28px;
     }
-  </style>
+    .bungkus{
+      width: 90%;
+      height: auto;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .kartu{
+      width: 250px;
+      height: 275px;
+      background-color: rgba(250, 174, 187, 0.636);
+      /* flex: 1 0 18%; */
+      border-radius: 15px;
+      padding: 0.7rem;
+      margin: 8px;
+    }
+    .gambar-projek{
+      width: 100%;
+      height: 170px;
+      border-radius: 15px;
+      overflow: hidden;
+      object-fit: cover;
+    
+    }
+    .gambar-projek img:hover{
+      rotate: 10deg;
+      scale: 120%;
+    }
+    .gambar-projek img{
+      width: 100%;
+      height: 170px;
+      transition: all;
+      transition-duration: 500ms;
+    }
+
+    .body{
+      width: 100%;
+      padding: 0 0.4rem 0 0.4rem;
+      display: block;
+      text-align: left;
+      
+    }
+
+    .body button {
+      width: 50%;
+      border-radius: 15px ;
+      height: 35px;
+      border: 1px solid pink;
+      background-color: rgb(252, 151, 167);
+    }
+
+    .body button:hover{
+      background-color: rgb(245, 131, 150);
+    }
+    
+    </style>
 </head>
 <body>
-  <div>
-    <img src="./image.jpeg" alt="image">
+  <div class="pembungkus">
+    <img class="profile" src="./image.jpeg" alt="image">
     <h1>41215618 - Laylatunnaimah</h1>
-    <a href="./p03/table.html">halaman table sederhana</a>
-    <a href="./p03/table_css.html">halaman table dengan css</a>
-    <a href="./p03/table_jquery.html">halaman table dengan jquery</a>
-    <a href="./p04/form.html">halaman html form sederhana</a>
-    <a href="./p04/form_css.html">halaman html css form</a>
-    <a href="./p04/form_responsive.html">halaman html css form responsive</a>
-
+    <div class="bungkus">
+      <div class="kartu">
+        <div class="gambar-projek">
+          <img src="./img/table_sederhana.png" alt="">
+        </div>
+        <div class="body">
+          <h4 align="left">
+            Table sederhana
+          </h4>
+          <button onclick="document.location.href = './p03/table.html'">Lihat projek</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="gambar-projek">
+          <img src="./img/table_css.png" alt="">
+        </div>
+        <div class="body">
+          <h4 align="left">
+            Table html css
+          </h4>
+          <button onclick="document.location.href = './p03/table_css.html'">Lihat projek</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="gambar-projek">
+          <img src="./img/table_css.png" alt="">
+        </div>
+        <div class="body">
+          <h4 align="left">
+            Table html css & JQuery
+          </h4>
+          <button onclick="document.location.href = './p03/table_jquery.html'">Lihat projek</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="gambar-projek">
+          <img src="./img/form_sederhana.png" alt="">
+        </div>
+        <div class="body">
+          <h4 align="left">
+            Form sederhana
+          </h4>
+          <button onclick="document.location.href = './p04/form.html'">Lihat projek</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="gambar-projek">
+          <img src="./img/form_css.png" alt="">
+        </div>
+        <div class="body">
+          <h4 align="left">
+            Form dengan css
+          </h4>
+          <button onclick="document.location.href = './p04/form_css.html'">Lihat projek</button>
+        </div>
+      </div>
+      <div class="kartu">
+        <div class="gambar-projek">
+          <img src="./img/form_sederhana.png" alt="">
+        </div>
+        <div class="body">
+          <h4 align="left">
+            Form responsive
+          </h4>
+          <button onclick="document.location.href = './p04/form_responsive.html'">Lihat projek</button>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
