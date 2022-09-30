@@ -1,0 +1,117 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laylatunnai`mah - Tabel Jquery P05</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,300&display=swap');
+
+      html {
+        scroll-behavior: smooth;
+        font-family: "Poppins";
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 900px;
+        margin-top: 20px;
+      }
+
+      th {
+        background-color: pink;
+      }
+
+      td {
+        background-color: white;
+        color: #2c3639;
+      }
+
+      td,
+      th {
+        border: 1px solid rgb(247, 133, 152);
+        padding: 8px;
+      }
+
+      td:first-child {
+        text-align: center;
+      }
+
+      td:hover {
+        background-color: rgba(255, 192, 203, 0.611);
+        color: #262626;
+      }
+
+     
+    </style>
+  </head>
+
+  <body>
+    <h2 align="center">The Top 5 of My Best Friend</h2>
+    <table align="center">
+      <tbody>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Aksi</th>
+        </tr>
+        <tr id="baris__1" class="baris">
+          <td>1</td>
+          <td class="data" id="nama_mhs__1">Muhamad Firly Ramadan</td>
+          <td class="data" id="alamat__1">Desa balad</td>
+          <td class="data tengah" id="hapus__1">Hapus</td>
+        </tr>
+        <tr id="baris__2" class="baris">
+          <td>2</td>
+          <td class="data" id="nama_mhs__2">Eka puspita</td>
+          <td class="data" id="alamat__2">Arjawinangun</td>
+          <td class="data tengah" id="hapus__2">Hapus</td>
+        </tr>
+        <tr id="baris__3" class="baris">
+          <td>3</td>
+          <td class="data" id="nama_mhs__3">Dwina aurelia</td>
+          <td class="data" id="alamat__3">Arjawinangun</td>
+          <td class="data tengah" id="hapus__3">Hapus</td>
+        </tr>
+        <tr id="baris__4" class="baris">
+          <td>4</td>
+          <td class="data" id="nama_mhs__4">Fifia nur handayani</td>
+          <td class="data" id="alamat__4">Kedawung</td>
+          <td class="data tengah" id="hapus__4">Hapus</td>
+        </tr>
+        <tr id="baris__5" class="baris">
+          <td>5</td>
+          <td class="data" id="nama_mhs__5">Mirna</td>
+          <td class="data" id="alamat__5">Sigong</td>
+          <td class="data tengah" id="hapus__5">Hapus</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".data").click(function () {
+          let isi = $(this).text();
+          let tid = $(this).prop("id");
+          let rid = tid.split("__");
+          let id_baris = rid[1];
+          let nama_mhs = $("#nama_mhs__" + id_baris).text();
+
+          if (isi == "Hapus") {
+            let konfirmasi = confirm(
+              `Anda yakin ingin menghapus data atas nama ${nama_mhs}?`
+            );
+            if (!konfirmasi) return;
+
+            $("#baris__" + id_baris).fadeOut();
+          } else {
+            alert("Anda mengklik kolom yang berisi : " + $(this).html() + "!");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
