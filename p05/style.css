@@ -12,7 +12,7 @@
   top: 0;
   background-color: pink;
   align-items: center;
-  display: flex;
+  display: flex !important;
   padding: 0.5rem 0 0.5rem;
 }
 
